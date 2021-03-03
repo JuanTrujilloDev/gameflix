@@ -1,0 +1,137 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+   
+ 
+<!--MAIN SECTION-->
+<section class="home" style="height:1000px; background-color:white; overflow:hidden;">
+
+    <div class="row h-100 align-items-center">
+        <div class="text-center">
+          <h1 class="homeTitle font-weight-bold">Find anything, play everything.</h1>
+          <p class="homeContent lead"><a class="btn btnHome " href="#">JOIN NOW!</a></p>
+        </div>
+      </div>
+
+
+</section>
+<!--END MAIN-->
+
+
+<!--CATEGORIES-->
+<section class="pt-5 pb-5 categorias">
+    <div class="container">
+      {% for genre1, genre2 in genres %}
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6   mt-4 mt-md-0 order-md-1 order-2">
+               <a href="#"> <img alt="image" class="img-fluid" src="{{genre1.image.url}}"> </a>
+            </div>
+            <div class="col-12 col-md-4 order-1 order-md-2">
+               <a href="#" > <h2 class="categoriaTitulo">{{genre1.name}}</h2> </a>
+                <p class="text-h3 mt-3 categoriaContenido">{{genre1.desc}}</p>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center pt-5 pb-5">
+            <div class="col-12 col-md-4 offset-md-1  ">
+               <a href="#" > <h2 class="categoriaTitulo">{{genre2.name}}</h2> </a>
+                <p class="text-h3 mt-3 categoriaContenido">{{genre2.desc}}</p>
+
+            </div>
+            <div class="col-12 col-md-6   mt-4 mt-md-0">
+               <a href="#" > <img alt="image" class="img-fluid" src="{{genre2.image.url}}"> </a>
+            </div>
+        </div>
+      {% endfor %}
+
+    </div>
+</section>
+
+<!--END CATEGORIES-->
+
+
+
+<!--NEWEST-->
+
+<section class="py-5" style="background-color: white;"><div class="container">
+  <div class="row d-flex categorias">
+    <div class="col-12">
+      <h3 class="mb-2 text-center h2 categoriaTitulo">Recent Blog Posts</h3>
+      <p class="mb-5 text-center">Sub-title - Equal height cards grid</p>
+    </div>
+    
+   
+    <div class="col-sm-6 col-md-4  d-flex" >
+      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
+        <header class="py-md-3 px-md-4">
+          <p class="mb-2">
+            <a href="#" class=" categoriaTitulo"> 3 years ago </a>
+          </p>
+          <a href="#">
+            <h4 class="card-title categoriaContenido">Cras in fringilla egestas condimentum morbi ut urna.</h4>
+          </a>
+        </header>
+        <a href="#">
+          <img class="card-img" src="https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=d156ca94ceff848e0bd0c15894bebb5e" alt="">
+        </a>
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </article>
+    </div>
+    <div class="col-sm-6 col-md-4  d-flex ">
+      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
+        <header class="py-md-3 px-md-4">
+          <p class="mb-2">
+            <a href="#" class=" categoriaTitulo"> 3 years ago </a>
+          </p>
+          <a href="#">
+            <h4 class="card-title categoriaContenido">Cras in fringilla egestas condimentum morbi ut urna.</h4>
+          </a>
+        </header>
+        <a href="#">
+          <img class="card-img" src="https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=d156ca94ceff848e0bd0c15894bebb5e" alt="">
+        </a>
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </article>
+    </div>
+    <div class="col-sm-6 col-md-4  d-flex ">
+      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
+        <header class="py-md-3 px-md-4">
+          <p class="mb-2">
+            <a href="#" class=" categoriaTitulo" > 3 years ago </a> 
+          </p>
+          <a href="#">
+            <h4 class="card-title categoriaContenido">Cras in fringilla egestas condimentum morbi ut urna.</h4>
+          </a>
+        </header>
+        <a href="#">
+          <img class="card-img" src="https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=d156ca94ceff848e0bd0c15894bebb5e" alt="">
+        </a>
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!---->
+
+
+
+
+<!-- Jquery needed -->
+
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+
+
+{% endblock %}

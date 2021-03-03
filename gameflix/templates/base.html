@@ -1,0 +1,43 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    {% include 'css.html' %}
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div id="holder">
+    
+    {% include 'nav.html' %}
+    
+  
+
+    <!-- BODY BLOCK-->
+    <div id="body">
+    {% block body %}
+    
+
+
+
+
+    
+    {% endblock %}
+  </div>
+
+    {% include 'footer.html' %}
+
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'js.html' %}
+  </body>
+</html>

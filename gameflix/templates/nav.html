@@ -1,0 +1,48 @@
+<!-- Navbar-->
+
+
+<header class="header">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top py-3" id="nav">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home-view' %}"><h3>Gameflix</h3></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home-view' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home-view' %}">Games</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home-view' %}">About</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'verification-view' %}">Account</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" style="background-color:rgb(189, 22, 22); color:white;" href="{% url 'logout-view' %}">Logout</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link navJoin" href="{% url 'login-view' %}">Login | Register</a>
+              </li>
+              {% endif %}
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Games..." aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  </header>
+  

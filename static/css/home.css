@@ -1,0 +1,42 @@
+
+    .card-custom {
+        max-width: 128px;
+    }
+
+    .home{
+        background-image: url('../img/home.jpg');
+        background-color: white;
+        text-align: center;
+        background-repeat:no-repeat;
+        background-position:center;        
+    }
+
+    .home img{
+        text-align: center;
+    }
+
+    .homeTitle{
+        color:white;
+    }
+
+    .homeContent{
+        color:white;
+    }
+
+    .btnHome{
+        background-color: rgb(255, 47, 47);
+        color: white;
+    }
+
+
+    .categoriaTitulo{
+        color: rgb(255, 47, 47);
+    }
+
+    .categoriaContenido{
+        color: white;
+    }
+
+    .categorias a{
+        text-decoration:dotted;
+    }
