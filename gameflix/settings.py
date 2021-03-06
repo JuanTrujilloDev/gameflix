@@ -133,7 +133,7 @@ LOGOUT_REDIRECT_URL = 'home-view'
 
 STATIC_URL = '/static/'
 
-
+##QUITAR LAS VARIABLES DE ENTOR
 if DEBUG:
     STATICFILES_DIRS = (
             os.path.join(BASE_DIR, "static"),
@@ -149,7 +149,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER2')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS2')
+EMAIL_HOST_USER = 'sarsu1104@gmail.com'
+EMAIL_HOST_PASSWORD ='qhqusueiaoodcunt'
 
 

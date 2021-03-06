@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import (
-    home
+    home,
+    genreView
 )
 from django.conf import settings 
 from django.conf.urls.static import static
@@ -24,7 +25,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home-view"),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('genre/<str:genre_slug>/', genreView,  name="genre-view"),
 ]
 
 if settings.DEBUG:

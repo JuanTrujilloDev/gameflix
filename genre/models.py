@@ -7,11 +7,11 @@ class Genre(models.Model):
     name = models.CharField(blank=False, null= False, max_length=20)
     image = models.ImageField(upload_to='genre', default= 'genre\default_genre.jpg')
     desc = models.TextField(blank= False, null = False, max_length = 50)
-    slug = models.SlugField(null=True, blank=True)
+    genre_slug = models.SlugField(null=True, blank=True)
 
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.genre_slug = slugify(self.name)
         super().save()
 
         img = Image.open(self.image.path)
@@ -20,6 +20,16 @@ class Genre(models.Model):
             output_size = (650 , 550)
             img.thumbnail(output_size)
             img.save(self.image.path) 
+
+    def __unicode__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return f'genre/{self.genre_slug}'
+    
 
         
 
