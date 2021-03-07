@@ -2,12 +2,15 @@ from django.db import models
 from genre.models import Genre
 from django.utils.text import slugify
 from PIL import Image
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 
 class Game(models.Model):
     name = models.CharField(max_length=80)
-    image = models.ImageField(upload_to="games")
+    image = models.ImageField(upload_to="games",
+    validators = [FileExtensionValidator(allowed_extensions=['jpg', 'png']) ])
+    image2 = models.ImageField(null = True, blank = True, upload_to="games")
     genre = models.ForeignKey(Genre, on_delete = models.CASCADE)
     cracker = models.CharField(max_length=30)
     desc = models.TextField()

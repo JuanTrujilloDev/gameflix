@@ -50,3 +50,101 @@ img {
     margin-bottom: 120px;
 }
 
+.headerGenre {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.headerGenre video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.headerGenre .container {
+  position: relative;
+  z-index: 2;
+}
+
+.headerGenre .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  .headerGenre {
+    background:  black no-repeat center center scroll;
+  }
+  .headerGenre video {
+    display: none;
+  }
+
+ 
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background-color: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.row .genreDiv{
+  background-color: red;
+}
+
+.dropdown .btn{
+  background-color: #5e5c5c !important;
+  color:rgb(255, 47, 47) !important;
+}
+
+.dropdownGenre li{
+  background-color: #5e5c5c !important;
+  color:rgb(255, 47, 47) !important;
+}
+
+
