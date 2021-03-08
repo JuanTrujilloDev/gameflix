@@ -27,6 +27,7 @@ urlpatterns = [
     path('', home, name="home-view"),
     path('users/', include('users.urls')),
     path('genre/<str:genre_slug>/', genreView,  name="genre-view"),
+    path('games/' ,include('games.urls')),
 ]
 
 if settings.DEBUG:

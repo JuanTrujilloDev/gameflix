@@ -10,6 +10,8 @@ class Genre(models.Model):
     validators = [FileExtensionValidator(allowed_extensions=['jpg', 'png']) ] ) 
     desc = models.TextField(blank= False, null = False, max_length = 50)
     genre_slug = models.SlugField(null=True, blank=True)
+    video = models.FileField(upload_to = 'gvideos', default = "gvideos\default.mp4",
+    validators = [FileExtensionValidator(allowed_extensions=['mp4', 'wav']) ])
 
     def save(self, *args, **kwargs):
         self.genre_slug = slugify(self.name)

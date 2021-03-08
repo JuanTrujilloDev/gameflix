@@ -14,7 +14,7 @@
         <div class="text-center">
           <h1 class="homeTitle font-weight-bold">Find anything, play everything.</h1>
           {% if request.user.is_authenticated %}
-          <p class="homeContent lead"><a class="btn btnHome " href="#">PLAY NOW!</a></p>
+          <p class="homeContent lead"><a class="btn btnHome " href="{% url 'game-view' %}">PLAY NOW!</a></p>
           {% else %}
           <p class="homeContent lead"><a class="btn btnHome" href="{% url 'register-view' %}">JOIN NOW!</a></p>
           {% endif %}
@@ -72,14 +72,14 @@
       <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
         <header class="py-md-3 px-md-4">
           <p class="mb-2">
-            <a href="#" class=" categoriaTitulo"> {{game.created}} </a>
+            <a href="{{game.get_absolute_url}}" class=" categoriaTitulo"> {{game.created}} </a>
           </p>
-          <a href="#">
+          <a href="{{game.get_absolute_url}}">
             <h4 class="card-title categoriaContenido">{{game.name}}</h4>
           </a>
         </header>
-        <a href="#">
-          <img class="card-img" src="{{game.image.url}}" alt="Game Img">
+        <a href="{{game.get_absolute_url}}">
+          <img class="card-img" src="{{game.image.url}}" alt="Game Img" style="height:250px;">
         </a>
         <div class="card-body">
           <p class="card-text"></p>
@@ -87,43 +87,7 @@
       </article>
     </div>
 
-    <div class="col-sm-6 col-md-4" >
-      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
-        <header class="py-md-3 px-md-4">
-          <p class="mb-2">
-            <a href="#" class=" categoriaTitulo"> {{game.created}} </a>
-          </p>
-          <a href="#">
-            <h4 class="card-title categoriaContenido">{{game.name}}</h4>
-          </a>
-        </header>
-        <a href="#">
-          <img class="card-img" src="{{game.image.url}}" alt="Game Img">
-        </a>
-        <div class="card-body">
-          <p class="card-text"></p>
-        </div>
-      </article>
-    </div>
 
-    <div class="col-sm-6 col-md-4" >
-      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
-        <header class="py-md-3 px-md-4">
-          <p class="mb-2">
-            <a href="#" class=" categoriaTitulo"> {{game.created}} </a>
-          </p>
-          <a href="#">
-            <h4 class="card-title categoriaContenido">{{game.name}}</h4>
-          </a>
-        </header>
-        <a href="#">
-          <img class="card-img" src="{{game.image.url}}" alt="Game Img">
-        </a>
-        <div class="card-body">
-          <p class="card-text"></p>
-        </div>
-      </article>
-    </div>
     {% endfor %}
     </div>
     

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'genre',
     'users',
     'crispy_forms',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +131,8 @@ LOGIN_REDIRECT_URL = 'home-view'
 
 LOGOUT_REDIRECT_URL = 'home-view'
 
+LOGIN_URL = 'login-view'
+
 
 STATIC_URL = '/static/'
 
@@ -149,7 +152,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sarsu1104@gmail.com'
-EMAIL_HOST_PASSWORD ='qhqusueiaoodcunt'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD =''
 
 

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from genre.models import Genre
 from games.models import Game
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -16,6 +17,8 @@ def home(request):
     context = {'genres': genres, 'recent':recent}
     return render(request, "home.html", context)
 
+
+@login_required
 def genreView(request, genre_slug):
     genre = Genre.objects.get(genre_slug = genre_slug)
     games = Game.objects.filter(genre = genre)

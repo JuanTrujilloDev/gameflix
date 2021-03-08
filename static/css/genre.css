@@ -97,7 +97,7 @@ img {
   .headerGenre video {
     display: none;
   }
-
+}
  
 .sidenav {
   width: 130px;
@@ -138,13 +138,46 @@ img {
 }
 
 .dropdown .btn{
-  background-color: #5e5c5c !important;
+  background-color: #202020 !important;
   color:rgb(255, 47, 47) !important;
 }
 
-.dropdownGenre li{
-  background-color: #5e5c5c !important;
-  color:rgb(255, 47, 47) !important;
+.button-adventure{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
 }
+
+.button-action{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
+}
+
+.button-sports{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
+}
+
+.button-strategy{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
+}
+
+
+.button-simulation{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
+}
+
+.button-racing{
+  background: rgb(55,47,47);
+  background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
+  color: white!important;
+}
+
 
 

@@ -14,7 +14,7 @@
 <header class="headerGenre">
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="../../static/video/{{genre.genre_slug}}.mp4" type="video/mp4">
+    <source src="{{genre.video.url}}" type="video/mp4">
   </video>
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
@@ -55,7 +55,7 @@
       <div class="card movie_card float-left">
           <img src="{{game.image.url}}" class="card-img-top" alt="...">
           <div class="card-body">
-              <a>
+              <a href="{{game.get_absolute_url}}">
               <i class="fa fa-download play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
               </i>
           </a>
@@ -68,53 +68,7 @@
           </div>
         </div>
 
-        <div class="card movie_card">
-          <img src="{{game.image.url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-              <a>
-              <i class="fa fa-download play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
-          </a>
-            <h5 class="card-title">{{game.name}}</h5>
-                   <span class="movie_info">{{game.created}}</span>
-                   &nbsp;
-                   |
-                   &nbsp;
-                   <span class="movie_info float-right"><i class="fa fa-gamepad"></i> &nbsp;{{game.genre}}</span>
-          </div>
-        </div>
-
-        <div class="card movie_card">
-          <img src="{{game.image.url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-              <a>
-              <i class="fa fa-download play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
-          </a>
-            <h5 class="card-title">{{game.name}}</h5>
-                   <span class="movie_info">{{game.created}}</span>
-                   &nbsp;
-                   |
-                   &nbsp;
-                   <span class="movie_info float-right"><i class="fa fa-gamepad"></i> &nbsp;{{game.genre}}</span>
-          </div>
-        </div>
-
-        <div class="card movie_card ">
-          <img src="{{game.image.url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-              <a>
-              <i class="fa fa-download play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
-          </a>
-            <h5 class="card-title">{{game.name}}</h5>
-                   <span class="movie_info">{{game.created}}</span>
-                   &nbsp;
-                   |
-                   &nbsp;
-                   <span class="movie_info float-right"><i class="fa fa-gamepad"></i> &nbsp;{{game.genre}}</span>
-          </div>
-        </div>
+        
 
         {% endfor %}
       </div>
