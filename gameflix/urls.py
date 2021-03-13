@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import (
     home,
-    genreView
+    genreView,
+    SearchView,
 )
 from django.conf import settings 
 from django.conf.urls.static import static
@@ -28,6 +29,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('genre/<str:genre_slug>/', genreView,  name="genre-view"),
     path('games/' ,include('games.urls')),
+    path('search/', SearchView.as_view(), name="search-view")
 ]
 
 if settings.DEBUG:

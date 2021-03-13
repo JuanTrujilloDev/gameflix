@@ -9,6 +9,7 @@ class Genre(models.Model):
     image = models.ImageField(upload_to='genre', default= 'genre\default_genre.jpg',
     validators = [FileExtensionValidator(allowed_extensions=['jpg', 'png']) ] ) 
     desc = models.TextField(blank= False, null = False, max_length = 50)
+    quote = models.CharField(default= "", max_length=130)
     genre_slug = models.SlugField(null=True, blank=True)
     video = models.FileField(upload_to = 'gvideos', default = "gvideos\default.mp4",
     validators = [FileExtensionValidator(allowed_extensions=['mp4', 'wav']) ])

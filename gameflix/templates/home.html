@@ -60,7 +60,7 @@
 
 <!--NEWEST-->
 
-<section class="py-5" style="background-color: white;"><div class="container">
+<section class="py-5 Latest" ><div class="container">
   <div class="row d-flex categorias justify-content-center">
     <div class="col-12">
       <h3 class="mb-2 text-center h2 categoriaTitulo">Latest Games</h3>
@@ -68,23 +68,23 @@
     </div>
     
    {% for game in recent %}
-    <div class="col-sm-6 col-md-4" >
-      <article class="card mb-4 border-right-0 border-left-0 border-top-0" style="background-color: rgb(27, 27, 27);">
-        <header class="py-md-3 px-md-4">
-          <p class="mb-2">
-            <a href="{{game.get_absolute_url}}" class=" categoriaTitulo"> {{game.created}} </a>
-          </p>
-          <a href="{{game.get_absolute_url}}">
-            <h4 class="card-title categoriaContenido">{{game.name}}</h4>
-          </a>
-        </header>
+    <div class="col-sm-12 col-md-6 col-lg-4 justify-content-center" style="margin: 0 auto;">
+    <a href="{{game.get_absolute_url}}">  
+      <div class="card movie_card float-left latestCard">
+        
         <a href="{{game.get_absolute_url}}">
-          <img class="card-img" src="{{game.image.url}}" alt="Game Img" style="height:250px;">
+          <img src="{{game.image.url}}" class="card-img-top" alt="...">
         </a>
         <div class="card-body">
-          <p class="card-text"></p>
+          <h5 class="card-title">{{game.name}}</h5>
+                 <span class="movie_info">{{game.created}}</span>
+                 &nbsp;
+                 <span>|</span>
+                 &nbsp;
+                 <span class="movie_info float-right"><i class="fa fa-gamepad"></i> &nbsp;<a class="text-danger"href="{{game.genre.get_absolute_url}}">{{game.genre}}</a></span>
         </div>
-      </article>
+      </div>
+    </a>
     </div>
 
 

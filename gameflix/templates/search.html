@@ -1,0 +1,128 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+   
+ 
+
+
+
+<!--CATEGORIES-->
+<header class="headerGenre hidden">
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="../../static/video/games.mp4" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white hidden">
+          <h1 class="display-3" style="color:red;">You searched for:</h1>
+        <p class="lead mb-0">{{query | safe}}</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="my-5">
+  <div class="container">
+    
+    <div class="row genreDiv">
+
+     
+      
+      
+    <div class=" row col-md-12 col-lg-12 justify-content-center">
+        <h1 class="text-light">Results: {{games | length}}</h1>
+      {% for game in games %}
+        
+      <div class="card movie_card float-left">
+        <a href="{{game.get_absolute_url}}">
+          <img src="{{game.image.url}}" class="card-img-top" alt="...">
+        </a>
+          <div class="card-body">
+              <a  href="{{game.get_absolute_url}}">
+              <i class="fa fa-download play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+              </i>
+          </a>
+            <h5 class="card-title">{{game.name}}</h5>
+                   <span class="movie_info">{{game.created}}</span>
+                   &nbsp;
+                   |
+                   &nbsp;
+                   <span class="movie_info float-right"><i class="fa fa-gamepad"></i> &nbsp;<a class="text-danger" href="{{game.genre.get_absolute_url}}">{{game.genre}}</a></span>
+          </div>
+        </div>
+
+
+        {% endfor %}
+      </div>
+
+      
+
+        
+
+
+  
+  </div>
+
+  {% if page_obj.has_next or page_obj.has_previous %}
+  <div class="pagination justify-content-center mt-5" style="text-align:center;">
+      <span class="step-links page-item">
+          {% if page_obj.has_previous %}
+              <a href="{%url 'search-view'%}?page=1&q={{query}}" class="btn btn-outline-primary">&laquo; first</a>
+              <a href="{%url 'search-view'%}?page={{ page_obj.previous_page_number }}&q={{query}}" class="btn btn-outline-primary">previous</a>
+          {% endif %}
+  
+          
+  
+         
+          {% for num in page_obj.paginator.page_range %}
+          {% if page_obj.number == num %}
+            <a class="btn btn-primary " href="{%url 'search-view'%}?page={{ num }}&q={{query}}">{{ num }}</a>
+          {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-primary " href="{%url 'search-view'%}?page={{ num }}&q={{query}}">{{ num }}</a>
+          {% endif %}
+        {% endfor %}
+  
+          {% if page_obj.has_next %}
+              <a href="{%url 'search-view'%}?page={{ page_obj.next_page_number }}&q={{query}}" class="btn btn-outline-primary">next</a>
+              <a href="{%url 'search-view'%}?page={{ page_obj.paginator.num_pages }}&q={{query}}" class="btn btn-outline-primary">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
+  
+  {% endif %}
+  </div>
+    </div>
+
+</section>
+
+<div class="container genreContainer ">
+  
+	<h2 class="text-center text-light">{{genre}} </h2>
+  
+	<div class="row justify-content-center">
+    
+    
+      
+    </div>
+
+				
+        
+
+
+<!---->
+
+
+
+
+<!-- Jquery needed -->
+
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+
+
+{% endblock %}

@@ -1,3 +1,7 @@
+.buttonDiv{
+  background-color: black!important;
+}
+
 img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
@@ -178,6 +182,8 @@ img {
   background: radial-gradient(circle, rgba(55,47,47,1) 0%, rgba(255,0,0,1) 100%); 
   color: white!important;
 }
+
+
 
 
 

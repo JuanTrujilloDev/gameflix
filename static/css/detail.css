@@ -1,0 +1,30 @@
+.detail{
+    margin-top: 150px;
+    border-radius: 25px;
+    background-color: white!important;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+
+.img-fluidDet{
+    height:500px;
+    width:350px!important;
+    margin-bottom:5px;
+}
+
+@media only screen and (max-width:800px){
+    .img-fluidDet{
+        width:430px!important;
+        height:500px!important;
+    margin-bottom: 5px;
+    }
+}
+
+.infoGame{
+    word-wrap: break-word!important;
+    overflow: hidden!important;
+}
+
+

@@ -1,1 +1,145 @@
 {% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+
+<div class="container detail">
+    <div class="row align-items-center">
+        <!-- image -->
+        <div class="col-lg-4 col-md-6 col-12 justify-content-center">
+            <img src="{{object.image.url}}" alt="" class="img-fluid img-fluidDet" />
+        </div>
+        <!-- description -->
+        <div class=" col-lg-7 col-md-6 col-12 infoGame">
+            <h1 class="infoGame"><strong>{{object.name}}</strong></h1>
+            <p class="mt-4 font-14 mb-4">
+                <span class="text-dark mr-1">Category: </span
+                ><a href="/{{object.genre.get_absolute_url}}" class="text-inherit ml-1 text-danger">{{object.genre}}</a>
+            </p>
+            <a href="{{object.download}}" class="btn btn-success mr-2">Download Torrent <i class="fa fa-cloud-download-alt"></i></a
+                >
+            <div class="d-flex">
+            
+              
+            </div>
+                <hr class="my-4" />
+      
+                
+                
+                <h4 class="mb-3"><strong>Description:</strong></h4>
+            <p class="infoGame">
+                    {{object.desc|linebreaks}}
+            </p>
+                
+            </div>
+        </div>
+        <hr class="my-10" />
+        
+        <!-- product detail list -->
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-5 col-12 mb-5">
+                <h4 class="mb-3"><strong>Game details:</strong></h4>
+                <ul class="list-group list-group-flush font-14 mb-0">
+                    <li class="list-group-item px-0 py-1">
+                        <span class="text-dark"><strong>Size:</strong></span> {{object.size}}
+                    </li>
+                    <li class="list-group-item px-0 py-1">
+                        <span class="text-dark"><strong>Release date:</strong></span> {{object.created}}
+                    </li>
+                    <li class="list-group-item px-0 py-1">
+                        <span class="text-dark"><strong>Language:</strong></span> {{object.lang}}
+                    </li>
+                    <li class="list-group-item px-0 py-1">
+                        <span class="text-dark"><strong>Cracked by:</strong></span> {{object.cracker}}
+                    </li>
+                    </ul>
+            </div>
+            
+            <!-- description -->
+            <div class="col-lg-8 col-md-7 col-12 infoGame">
+     
+                <h4 class="mb-3 mt-auto"><strong>Trailer:</strong></h4>
+               
+                {% video object.trailer %}
+                
+                <hr class="my-10" />
+                <h4 class="mb-3"><strong>Requirements:</strong></h4>
+                <p class="infoGame">
+                    {{object.requirements|linebreaks}}
+                </p>
+               
+            </div>
+            <hr class="my-10">
+            
+            <div class="container">
+                <div class="row bootstrap snippets bootdeys">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="comment-wrapper">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                   <h1> Comment down below:</h1>
+                                   <form method="POST" action="{% url 'game-detail' game.slug %}">{% csrf_token %}
+                                       
+                                    {{form.content|as_crispy_field}}
+                                    <br>
+                                    <button type="submit" class="btn btn-danger pull-right">Comment</button>
+                                </form>
+                                </div>
+                                <div class="panel-body" style="margin-top: 55px;">
+                                    
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    <h3>Comments ({{comments|length}}):</h3>
+                                    <ul class="media-list">
+                                        {% for comment in comments %}
+                                        <li class="media">
+            
+                                            <div class="media-body" style="word-wrap:break-word; overflow: hidden; margin-top:5px; max-width:1000px;">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">{{comment.date}}</small>
+                                                </span>
+                                                <strong class="text-danger">@{{comment.author}}</strong>
+                                                <p >
+                                                    {{comment.content|linebreaks}} 
+                                                </p>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+          
+            
+        </div>
+</div>
+
+ 
+       
+  
+  
+       
+  
+        
+  
+          
+  
+  
+    
+   
+ 
+  <div class="container genreContainer ">
+    
+      <h2 class="text-center text-light">{{genre}} </h2>
+    
+      <div class="row justify-content-center">
+      
+      
+        
+      </div>
+
+
+{% endblock %}

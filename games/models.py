@@ -8,32 +8,29 @@ from embed_video.fields import EmbedVideoField
 # Create your models here.
 
 class Game(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=25)
 
     image = models.ImageField(upload_to="games", default = 'games/default.jpg',
     validators = [FileExtensionValidator(allowed_extensions=['jpg', 'png']) ])
-
-    image2 = models.ImageField(null = True, blank = True, upload_to="games")
-
     genre = models.ForeignKey(Genre, on_delete = models.CASCADE)
-    cracker = models.CharField(max_length=30)
-    desc = models.TextField()
+    cracker = models.CharField(max_length=35)
+    desc = models.TextField(max_length = 150)
+    requirements = models.TextField()
     created = models.DateField(auto_now = False)
     slug = models.SlugField(blank = True, null=True)
     download = models.CharField(max_length= 100)
-    size = models.FloatField(default=0)
+    size = models.CharField(max_length=10)
+    lang = models.CharField(max_length=10)
     trailer = EmbedVideoField(default=" ")
 
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save()
-        img = Image.open(self.image.path)
-
-        if img.height > 280 or img.width > 380:
-            output_size = (280 , 380)
-            img.thumbnail(output_size)
-            img.save(self.image.path) 
+        super(Game, self).save()
+        pk = str(self.pk)
+        self.slug = slugify(self.name) + pk
+        super(Game, self).save(*args, **kwargs)
+        
+      
 
     def __unicode__(self):
         return self.name

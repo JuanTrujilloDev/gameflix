@@ -31,12 +31,54 @@
 
     .categoriaTitulo{
         color: rgb(255, 47, 47);
+        overflow:hidden;
+        word-wrap: break-word;
     }
 
     .categoriaContenido{
         color: white;
+        overflow:hidden;
+        word-wrap: break-word;
     }
+
+  
 
     .categorias a{
         text-decoration:dotted;
     }
+
+    .recentImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: auto;
+        margin: auto;
+    }
+
+    .recentImg img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:230px;
+        height:300px; 
+    }
+    
+.Latest{
+    background-color: white;
+}
+
+.latestCard{
+    background-color: rgb(29, 29, 29)!important;
+    overflow:hidden;
+    word-wrap: break-word;
+}
+
+.latestCard h5{
+    color: rgb(218, 23, 23)!important;
+    overflow:hidden;
+    word-wrap:break-word;
+}
+
+.latestCard span{
+    color: rgb(255, 255, 255)!important;
+}
